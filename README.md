@@ -11,41 +11,41 @@ MoodNiko is a mood-based content generation app that helps users discover person
 - **Get personalized recommendations** based on emotional patterns
 - **Save and manage** their favorite content
 
-## ✨ Features
+##  Features
 
-### 🎨 Beautiful UI/UX
+### Interface
 - **Modern Design**: Clean, intuitive interface with smooth animations
 - **Responsive Layout**: Works perfectly on desktop, tablet, and mobile
 - **Mood-Based Colors**: Dynamic color schemes that reflect different emotional states
 - **Interactive Elements**: Hover effects, transitions, and micro-interactions
 
-### 😊 Mood Tracking
+### Mood Tracking
 - **Quick Mood Input**: One-click mood selection with emojis
 - **Detailed Mood Logging**: Track intensity, context, activities, and more
 - **Mood History**: Visual timeline of emotional patterns
 - **Insights Dashboard**: Analytics and trends about your emotional well-being
 
-### 🎵 Content Discovery
+### Content Discovery
 - **Multi-Platform Content**: Music (Spotify), Movies (TMDB), Books (Google Books), Podcasts
 - **Smart Filtering**: Filter by mood, content type, and preferences
-- **Personalized Recommendations**: AI-powered suggestions based on your mood patterns
+- **Personalized Recommendations**: Intelligence-powered suggestions based on your mood patterns
 - **Content Cards**: Beautiful cards with ratings, descriptions, and quick actions
 
-### 📱 Responsive Design
+### Responsive Design
 - **Mobile-First**: Optimized for mobile devices
 - **Bottom Navigation**: Easy thumb navigation on mobile
 - **Adaptive Layouts**: Components that adapt to different screen sizes
 - **Touch-Friendly**: Large touch targets and smooth gestures
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Frontend Framework**: React 19 with TypeScript
+- **Frontend Framework**: React with TypeScript
 - **Styling**: TailwindCSS with custom design system
 - **Icons**: Lucide React for consistent iconography
 - **Build Tool**: Vite for fast development and building
 - **Package Manager**: npm
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -79,7 +79,7 @@ MoodNiko is a mood-based content generation app that helps users discover person
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -97,26 +97,8 @@ src/
 └── index.css           # Global styles and TailwindCSS
 ```
 
-## 🎨 Design System
 
-### Color Palette
-- **Primary**: Blue gradient (#0ea5e9 to #0284c7)
-- **Mood Colors**: Specific colors for different emotions
-- **Content Type Colors**: Distinct colors for music, movies, books, podcasts
-- **Neutral**: Gray scale for text and backgrounds
-
-### Typography
-- **Font Family**: Inter (Google Fonts)
-- **Weights**: 300, 400, 500, 600, 700
-- **Hierarchy**: Clear heading and body text scales
-
-### Components
-- **Cards**: Rounded corners, shadows, hover effects
-- **Buttons**: Primary and secondary styles with hover states
-- **Forms**: Clean inputs with focus states
-- **Navigation**: Responsive header and mobile bottom nav
-
-## 🔧 Configuration
+## Configuration
 
 ### TailwindCSS
 The project uses a custom TailwindCSS configuration with:
@@ -128,13 +110,13 @@ The project uses a custom TailwindCSS configuration with:
 ### PostCSS
 Configured with autoprefixer for cross-browser compatibility.
 
-## 📱 Responsive Breakpoints
+## Responsive Breakpoints
 
 - **Mobile**: < 768px
 - **Tablet**: 768px - 1024px  
 - **Desktop**: > 1024px
 
-## 🎯 Future Enhancements
+## Future Enhancements
 
 - **Authentication System**: User login/registration
 - **Backend Integration**: Connect to MoodNiko backend APIs
@@ -143,7 +125,7 @@ Configured with autoprefixer for cross-browser compatibility.
 - **Dark Mode**: Theme switching
 - **Internationalization**: Multi-language support
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -151,16 +133,12 @@ Configured with autoprefixer for cross-browser compatibility.
 4. Add tests if applicable
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Fonts**: [Google Fonts](https://fonts.google.com/)
 - **Design Inspiration**: Modern web app patterns and best practices
-
----
-
-Built with ❤️ for better mood management and content discovery.

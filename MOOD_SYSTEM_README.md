@@ -1,9 +1,9 @@
-# 🎭 Scalable Mood System - MoodNiko Frontend
+# Scalable Mood System - MoodNiko Frontend
 
 ## Overview
 This document explains the scalable mood system implemented in the MoodNiko frontend, designed to easily switch between emojis and human face/expression images while maintaining code maintainability.
 
-## 🏗️ Architecture
+## Architecture
 
 ### 1. Centralized Configuration (`src/config/moodConfig.ts`)
 - **Single source of truth** for all mood-related configurations
@@ -22,7 +22,7 @@ This document explains the scalable mood system implemented in the MoodNiko fron
 - **Consistent behavior** across the application
 - **Easy updates** when mood definitions change
 
-## 🔧 How to Switch Between Emoji and Human Face Images
+## How to Switch Between Emoji and Human Face Images
 
 ### Current State: Using Emojis
 ```typescript
@@ -64,7 +64,7 @@ export const HUMAN_FACE_MAPPING: Record<string, string> = {
 }
 ```
 
-## 📁 File Structure
+## File Structure
 
 ```
 src/
@@ -78,7 +78,7 @@ src/
     └── ContentRecommendations.tsx # Uses centralized mood system
 ```
 
-## 🎯 Key Benefits
+## Key Benefits
 
 ### 1. **Easy Maintenance**
 - **Single file** to update mood definitions
@@ -95,7 +95,7 @@ src/
 - **Type-safe** mood definitions
 - **Intuitive API** for mood operations
 
-## 🚀 Usage Examples
+## Usage Examples
 
 ### Getting Mood Data
 ```typescript
@@ -153,9 +153,9 @@ export const HUMAN_FACE_MAPPING: Record<string, string> = {
 }
 ```
 
-## 🔄 Migration Path
+## Migration Path
 
-### Phase 1: Current Implementation ✅
+### Phase 1: Current Implementation
 - Using emojis for all mood representations
 - Centralized mood system in place
 - All components integrated
@@ -175,7 +175,7 @@ export const HUMAN_FACE_MAPPING: Record<string, string> = {
 - Implement lazy loading
 - Add image preloading
 
-## 🛠️ Technical Details
+## Technical Details
 
 ### Mood Definition Interface
 ```typescript
@@ -201,7 +201,7 @@ export interface MoodIconConfig {
 }
 ```
 
-## 🎨 Human Face Image Requirements
+## Human Face Image Requirements
 
 When you're ready to implement human face images:
 
@@ -240,7 +240,7 @@ When you're ready to implement human face images:
 - **Professional quality** suitable for production use
 - **Accessible design** with good contrast and clarity
 
-## 🔍 Testing the System
+## Testing the System
 
 ### Test Emoji Mode
 ```typescript
@@ -262,7 +262,7 @@ const icon = getMoodIcon('happy', true)
 console.log(icon) // Should return human face image or fallback to emoji
 ```
 
-## 📝 Best Practices
+## Best Practices
 
 1. **Always use utility functions** instead of hardcoding mood data
 2. **Test both image modes** when making changes
@@ -272,7 +272,7 @@ console.log(icon) // Should return human face image or fallback to emoji
 6. **Test fallback behavior** for missing human face images
 7. **Ensure human face images are appropriately sized** to match emoji dimensions
 
-## 🚨 Common Issues & Solutions
+## Common Issues & Solutions
 
 ### Issue: Images not switching
 **Solution**: Check `MOOD_ICON_CONFIG.useHumanImages` value and ensure human face image files exist
@@ -286,7 +286,7 @@ console.log(icon) // Should return human face image or fallback to emoji
 ### Issue: Image sizing mismatch
 **Solution**: Ensure human face images are sized appropriately to match emoji dimensions
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 1. **Image caching** for better performance
 2. **Lazy loading** for human face images
