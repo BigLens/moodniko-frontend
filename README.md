@@ -2,7 +2,7 @@
 
 A beautiful, responsive frontend for the MoodNiko mood-based content recommendation app. Built with React, TypeScript, and TailwindCSS.
 
-## 🎯 Project Overview
+## Project Overview
 
 MoodNiko is a mood-based content generation app that helps users discover personalized content (music, movies, books, podcasts) based on their current emotional state. This frontend provides an intuitive interface for users to:
 
