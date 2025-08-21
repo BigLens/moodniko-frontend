@@ -1,4 +1,4 @@
-import { Heart, Mail, MessageCircle, Twitter, Instagram, Facebook, Youtube } from 'lucide-react'
+import { Heart, Twitter, Instagram, Facebook, Youtube } from 'lucide-react'
 
 const Footer = () => {
   return (

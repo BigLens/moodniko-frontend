@@ -1,4 +1,4 @@
-import { Home, Heart, Settings, User, Music, Film, BookOpen, Mic, UserPlus } from 'lucide-react'
+import { Home, Heart, Settings, Music, Film, BookOpen, Mic, UserPlus } from 'lucide-react'
 import type { ReactNode } from 'react'
 import Footer from './Footer'
 

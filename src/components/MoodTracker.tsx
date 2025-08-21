@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Heart, Plus, X, Calendar, TrendingUp, Activity, Users, Zap, Coffee, Moon, Sun, Cloud, CloudRain } from 'lucide-react'
+import { Heart, Plus, X, TrendingUp, Activity, Users, Zap, Moon } from 'lucide-react'
 import { 
   getAllMoods, 
   getMoodIcon, 
@@ -100,9 +100,7 @@ const MoodTracker = () => {
     'One-on-one', 'Group setting', 'Online', 'Phone call'
   ]
 
-  const weatherOptions = [
-    'Sunny', 'Cloudy', 'Rainy', 'Stormy', 'Snowy', 'Windy', 'Clear', 'Overcast'
-  ]
+
 
   const handleQuickMood = (moodId: string) => {
     const newEntry: MoodEntry = {
@@ -181,7 +179,7 @@ const MoodTracker = () => {
               >
                 <div className="text-3xl mb-2">
                   {/* Future: Easy switch between emoji and custom icons */}
-                  {getMoodIcon(mood.id, MOOD_ICON_CONFIG.useCustomIcons)}
+                  {getMoodIcon(mood.id, MOOD_ICON_CONFIG.useHumanImages)}
                 </div>
                 <div className="text-sm font-medium capitalize">{mood.label}</div>
               </button>
@@ -261,7 +259,7 @@ const MoodTracker = () => {
                     <div className="flex items-center space-x-3">
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center text-2xl ${getMoodColor(entry.feeling)}`}>
                         {/* Future: Easy switch between emoji and custom icons */}
-                        {getMoodIcon(entry.feeling, MOOD_ICON_CONFIG.useCustomIcons)}
+                        {getMoodIcon(entry.feeling, MOOD_ICON_CONFIG.useHumanImages)}
                       </div>
                       <div>
                         <h4 className="text-lg font-semibold text-gray-900 capitalize">
@@ -357,7 +355,7 @@ const MoodTracker = () => {
                     >
                       <div className="text-2xl mb-1">
                         {/* Future: Easy switch between emoji and custom icons */}
-                        {getMoodIcon(mood.id, MOOD_ICON_CONFIG.useCustomIcons)}
+                        {getMoodIcon(mood.id, MOOD_ICON_CONFIG.useHumanImages)}
                       </div>
                       <div className="text-xs capitalize">{mood.label}</div>
                     </button>

@@ -3,9 +3,7 @@ import { Heart, Play, BookOpen, Film, Music, Mic, ExternalLink, Bookmark, Share2
 import { 
   getContentTypeColor, 
   cn, 
-  getAllMoods, 
-  getMoodIcon,
-  MOOD_ICON_CONFIG 
+  getAllMoods
 } from '../lib/utils'
 
 interface ContentItem {

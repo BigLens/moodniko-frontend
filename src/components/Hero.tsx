@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import { Heart, Sparkles, ArrowRight, Plus, Bookmark, Share2, Play, Music, Film, BookOpen, Mic, Check } from 'lucide-react'
 import { 
-  getMoodEmoji, 
-  getMoodColor, 
   getContentTypeColor, 
   getAllMoods, 
   getMoodTherapeuticGoal,
-  getMoodIcon,
-  MOOD_ICON_CONFIG
+  getMoodIcon
 } from '../lib/utils'
+import { MOOD_ICON_CONFIG } from '../config/moodConfig'
 
 interface QuickContent {
   id: string

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { MOOD_ICON_CONFIG, setMoodImageMode, getImageSizeClass } from '../config/moodConfig'
 import { getMoodIcon, getAllMoods } from '../lib/utils'
 
