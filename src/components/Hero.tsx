@@ -327,7 +327,7 @@ const Hero = () => {
            How are you feeling
            <span className="block text-primary-600">today?</span>
          </h1>
-         {/* Test deployment - Vercel auto-deploy check */}
+         {/* Production version - Stable deployment */}
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
           Share your mood and discover content that will help you feel better. 
           We're here to support your emotional well-being! ✨
