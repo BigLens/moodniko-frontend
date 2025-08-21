@@ -323,10 +323,11 @@ const Hero = () => {
     <div className="py-8 px-4">
       {/* Main Hero Section */}
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-          How are you feeling
-          <span className="block text-primary-600">today?</span>
-        </h1>
+                 <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+           How are you feeling
+           <span className="block text-primary-600">today?</span>
+         </h1>
+         {/* Test deployment - Vercel auto-deploy check */}
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
           Share your mood and discover content that will help you feel better. 
           We're here to support your emotional well-being! ✨
