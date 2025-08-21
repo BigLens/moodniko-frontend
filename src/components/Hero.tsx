@@ -125,7 +125,7 @@ const Hero = () => {
         },
         {
           id: '10',
-          title: 'Peaceful Piano',
+          title: 'Peaceful Pianoo',
           type: 'music',
           mood: 'relaxed',
           source: 'Spotify',
