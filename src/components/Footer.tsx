@@ -63,7 +63,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 MoodNiko. All rights reserved. Dedicated to improving emotional well-being.
+            © 2025 MoodNiko. All rights reserved. Dedicated to improving emotional well-being.
           </p>
           <div className="flex items-center space-x-2 mt-4 md:mt-0">
             <span className="text-gray-400 text-sm">Made with</span>
