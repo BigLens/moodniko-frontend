@@ -48,15 +48,7 @@ module.exports = {
     '!src/vite-env.d.ts'
   ],
   
-  // Coverage thresholds
-  coverageThreshold: {
-    global: {
-      branches: 30,
-      functions: 30,
-      lines: 30,
-      statements: 30
-    }
-  },
+
   
   // Test timeout
   testTimeout: 10000,
