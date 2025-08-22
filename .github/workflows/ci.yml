@@ -11,6 +11,8 @@ env:
   NODE_VERSION: '18'
   PNPM_VERSION: '8'
 
+
+
 jobs:
   dev-checks:
     if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
@@ -39,17 +41,7 @@ jobs:
       - name: Run tests
         run: npm run test:ci
         
-      - name: Notify dev checks completed
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: 'Dev Branch Checks Completed',
-              body: `## Dev Branch Quality Checks Passed! \n\n**Branch:** ${context.ref}\n**Commit:** ${context.sha}\n**Time:** ${new Date().toISOString()}\n\n### What was checked:\n- TypeScript compilation: passed\n- Linting: passed\n- Tests: passed\n- Build: passed\n\n### Next steps:\n- Create PR to staging for testing\n- Continue development on dev branch\n\n---\n*This issue was automatically created by the CI/CD pipeline*`,
-              labels: ['quality-check', 'dev', 'automated']
-            })
+
     
   dev-pr-checks:
     if: github.event_name == 'pull_request' && github.base_ref == 'dev'
@@ -83,16 +75,7 @@ jobs:
           npm run build
           echo "Bundle size check completed"
           
-      - name: Comment PR status
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '**Dev Branch PR Checks Passed!** \n\n- TypeScript compilation: passed\n- Linting: passed\n- Tests: passed\n- Build: passed\n\nReady for review and merge to dev!'
-            })
+
     
 
 
@@ -134,17 +117,7 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: '--prod=false'
           
-      - name: Notify staging deployment
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: 'Staging Deployment Completed',
-              body: `## Staging Deployment Success!\n\n**Branch:** ${context.ref}\n**Commit:** ${context.sha}\n**Deployed by:** ${context.actor}\n**Time:** ${new Date().toISOString()}\n\n### What was deployed:\n- Frontend application to staging\n- Latest mood therapy features\n- Ready for thorough testing\n\n### Next steps:\n- Test staging deployment thoroughly\n- Create PR to production if all tests pass\n- Fix any issues found during testing\n\n---\n*This issue was automatically created by the CI/CD pipeline*`,
-              labels: ['deployment', 'staging', 'automated']
-            })
+
 
   production-deploy:
     if: github.ref == 'refs/heads/production'
@@ -214,16 +187,7 @@ jobs:
           npm run build
           echo "Bundle size check completed"
           
-      - name: Comment PR status
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '**CI Checks Passed!**\n\n- TypeScript compilation: passed\n- Linting: passed\n- Build: passed\n\nReady for review and merge!'
-            })
+
 
   security-checks:
     runs-on: ubuntu-latest
@@ -248,20 +212,4 @@ jobs:
       - name: Check for outdated packages
         run: npm outdated || echo "All packages are up to date"
 
-  notify-production:
-    if: github.ref == 'refs/heads/production' && github.event_name == 'push'
-    runs-on: ubuntu-latest
-    name: Production Deployment Notification
-    
-    steps:
-      - name: Notify deployment
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: 'Production Deployment Completed',
-              body: `## Production Deployment Success! \n\n**Branch:** ${context.ref}\n**Commit:** ${context.sha}\n**Deployed by:** ${context.actor}\n**Time:** ${new Date().toISOString()}\n\n### What was deployed:\n- Frontend application\n- Latest mood therapy features\n- Production-ready build\n\n### Next steps:\n- Monitor application performance\n- Check for any issues\n- Prepare for next release cycle\n\n---\n*This issue was automatically created by the CI/CD pipeline*`,
-              labels: ['deployment', 'production', 'automated']
-            })
+
