@@ -94,47 +94,7 @@ jobs:
               body: '**Dev Branch PR Checks Passed!** \n\n- TypeScript compilation: passed\n- Linting: passed\n- Tests: passed\n- Build: passed\n\nReady for review and merge to dev!'
             })
     
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-          
-      - name: Install dependencies
-        run: npm ci
-        
-      - name: TypeScript type check
-        run: npm run build
-        
-      - name: Lint code
-        run: npm run lint || echo "Linting passed"
-        
-      - name: Build for preview
-        run: npm run build
-        
-      - name: Deploy to Vercel (Preview)
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod=false'
-          
-      - name: Notify dev deployment
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: 'Dev Branch Updated & Deployed',
-              body: `## Dev Branch Update Success!\n\n**Branch:** ${context.ref}\n**Commit:** ${context.sha}\n**Deployed by:** ${context.actor}\n**Time:** ${new Date().toISOString()}\n\n### What was deployed:\n- Frontend application updates\n- Latest mood therapy features\n- Preview deployment to Vercel\n\n### Next steps:\n- Test the preview deployment\n- Create PR to staging if ready\n- Continue development on dev branch\n\n---\n*This issue was automatically created by the CI/CD pipeline*`,
-              labels: ['deployment', 'dev', 'automated']
-            })
+
 
   staging-deploy:
     if: github.ref == 'refs/heads/staging'
