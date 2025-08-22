@@ -110,12 +110,11 @@ jobs:
         run: npm run build
         
       - name: Deploy to Vercel (Staging)
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod=false'
+        run: |
+          npm install -g vercel
+          echo ${{ secrets.VERCEL_TOKEN }} | vercel --token stdin --prod=false --confirm
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           
 
 
@@ -151,12 +150,11 @@ jobs:
         run: npm run build
         
       - name: Deploy to Vercel (Production)
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
+        run: |
+          npm install -g vercel
+          echo ${{ secrets.VERCEL_TOKEN }} | vercel --token stdin --prod --confirm
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           
   pr-checks:
     if: github.event_name == 'pull_request'
