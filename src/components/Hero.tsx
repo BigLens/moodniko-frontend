@@ -369,7 +369,7 @@ const Hero = () => {
                 {getMoodTherapyMessage(selectedMood)} {getMoodIcon(selectedMood, MOOD_ICON_CONFIG.useHumanImages)}
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                What type of content would help improve your mood? You can select multiple types!
+                What type of content would help improve your mood? You can select more than one!
               </p>
             </div>
             
