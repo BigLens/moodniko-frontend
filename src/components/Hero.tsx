@@ -154,7 +154,7 @@ const Hero = () => {
       stressed: [
         {
           id: '13',
-          title: 'Stress Relief Playlist',
+          title: 'Stress-Relief Playlist',
           type: 'music',
           mood: 'stressed',
           source: 'Spotify',
