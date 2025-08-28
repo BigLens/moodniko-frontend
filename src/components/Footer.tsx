@@ -1,4 +1,5 @@
 import { Heart, Twitter, Instagram, Facebook, Youtube } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -39,11 +40,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">Mood Tracking</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">Content Discovery</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">Emotional Insights</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">Wellness Tips</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">Success Stories</a></li>
+              <li><Link to="/mood-tracker" className="text-gray-300 hover:text-primary-400 transition-colors">Mood Tracking</Link></li>
+              <li><Link to="/discover" className="text-gray-300 hover:text-primary-400 transition-colors">Content Discovery</Link></li>
+              <li><Link to="/analytics" className="text-gray-300 hover:text-primary-400 transition-colors">Emotional Insights</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-primary-400 transition-colors">About Us</Link></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-primary-400 transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -51,11 +52,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Support</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">Help Center</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">Contact Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">Mental Health Resources</a></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-primary-400 transition-colors">Help Center</Link></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-primary-400 transition-colors">Contact Us</Link></li>
+              <li><Link to="/privacy" className="text-gray-300 hover:text-primary-400 transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="text-gray-300 hover:text-primary-400 transition-colors">Terms of Service</Link></li>
+              <li><Link to="/resources" className="text-gray-300 hover:text-primary-400 transition-colors">Mental Health Resources</Link></li>
             </ul>
           </div>
         </div>

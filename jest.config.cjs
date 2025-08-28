@@ -25,14 +25,17 @@ module.exports = {
     '**/*.(test|spec).(ts|tsx|js)'
   ],
   
-  // Ignore backend tests
+  // Ignore backend tests and utility files
   testPathIgnorePatterns: [
     '/node_modules/',
-    '/backend/'
+    '/backend/',
+    '/__tests__/utils/'
   ],
   
   // Setup files
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
+  
+
   
   // Module name mapping
   moduleNameMapper: {
@@ -47,6 +50,21 @@ module.exports = {
     '!src/main.tsx',
     '!src/vite-env.d.ts'
   ],
+  
+  // Coverage thresholds - set to 0% for now to prevent CI failures
+  // TODO: Increase these thresholds as more tests are added:
+  // - branches: 50
+  // - functions: 50  
+  // - lines: 50
+  // - statements: 50
+  coverageThreshold: {
+    global: {
+      branches: 0,
+      functions: 0,
+      lines: 0,
+      statements: 0
+    }
+  },
   
 
   

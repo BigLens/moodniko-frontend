@@ -2,6 +2,8 @@ import type { ReactElement, ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import type { RenderOptions } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 // Custom render function that includes providers if needed
 const customRender = (
@@ -9,14 +11,14 @@ const customRender = (
   options?: Omit<RenderOptions, 'wrapper'>
 ) => {
   const AllTheProviders = ({ children }: { children: ReactNode }) => {
-    return children;
+    return React.createElement(BrowserRouter, null, children);
   };
 
   return render(ui, { wrapper: AllTheProviders, ...options });
 };
 
-// Re-export everything
-export * from '@testing-library/react';
+// Re-export specific functions we need
+export { screen, fireEvent, waitFor, within, findByText, findByRole, findByTestId } from '@testing-library/react';
 
 // Override render method
 export { customRender as render };
@@ -71,11 +73,4 @@ export const createMockUser = (overrides = {}) => ({
   ...overrides
 });
 
-// Add a simple test to satisfy Jest requirements
-describe('test-utils', () => {
-  it('should export required functions', () => {
-    expect(createMockUser).toBeDefined();
-    expect(mockMoodData).toBeDefined();
-    expect(mockContentData).toBeDefined();
-  });
-});
+
