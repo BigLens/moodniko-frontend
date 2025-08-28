@@ -1,6 +1,8 @@
 import { Heart, Users, Clock, TrendingUp, Star, Smile } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const Stats = () => {
+  const navigate = useNavigate()
   const stats = [
     {
       icon: Users,
@@ -115,7 +117,10 @@ const Stats = () => {
           <p className="text-lg text-gray-600 mb-6">
             Join thousands of users who are already improving their emotional well-being
           </p>
-          <button className="btn-primary text-lg px-8 py-4">
+          <button 
+            onClick={() => navigate('/login')}
+            className="btn-primary text-lg px-8 py-4"
+          >
             Start Your Emotional Wellness Journey
           </button>
         </div>
