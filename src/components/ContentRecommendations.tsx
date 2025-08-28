@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Heart, Play, BookOpen, Film, Music, Mic, ExternalLink, Bookmark, Share2, UserPlus } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import { 
   getContentTypeColor, 
   cn, 
@@ -19,6 +20,7 @@ interface ContentItem {
 }
 
 const ContentRecommendations = () => {
+  const navigate = useNavigate()
   const [selectedType, setSelectedType] = useState<string>('all')
   const [selectedMood, setSelectedMood] = useState<string>('all')
 
@@ -307,10 +309,16 @@ const ContentRecommendations = () => {
             and track your emotional journey over time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary text-lg px-8 py-3">
+            <button 
+              onClick={() => navigate('/login')}
+              className="btn-primary text-lg px-8 py-3"
+            >
               Create Free Account
             </button>
-            <button className="btn-secondary text-lg px-8 py-3">
+            <button 
+              onClick={() => navigate('/discover')}
+              className="btn-secondary text-lg px-8 py-3"
+            >
               Continue Exploring
             </button>
           </div>
@@ -320,7 +328,10 @@ const ContentRecommendations = () => {
       {/* Load More */}
       {filteredContent.length > 0 && (
         <div className="text-center mt-12">
-          <button className="btn-secondary">
+          <button 
+            onClick={() => navigate('/discover')}
+            className="btn-secondary"
+          >
             Load More Mood-Boosting Content
           </button>
         </div>

@@ -10,7 +10,7 @@ global.IntersectionObserver = class IntersectionObserver {
   rootMargin: string = '';
   thresholds: ReadonlyArray<number> = [];
   takeRecords(): IntersectionObserverEntry[] { return []; }
-} as any;
+} as IntersectionObserver;
 
 // Mock ResizeObserver (not available in jsdom)
 global.ResizeObserver = class ResizeObserver {
@@ -46,7 +46,7 @@ const originalError = console.error;
 const originalWarn = console.warn;
 
 beforeAll(() => {
-  console.error = (...args: any[]) => {
+  console.error = (...args: unknown[]) => {
     if (
       typeof args[0] === 'string' &&
       args[0].includes('Warning: ReactDOM.render is no longer supported')
@@ -56,7 +56,7 @@ beforeAll(() => {
     originalError.call(console, ...args);
   };
   
-  console.warn = (...args: any[]) => {
+  console.warn = (...args: unknown[]) => {
     if (
       typeof args[0] === 'string' &&
       args[0].includes('Warning: ReactDOM.render is no longer supported')

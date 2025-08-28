@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Heart, Sparkles, ArrowRight, Plus, Bookmark, Share2, Play, Music, Film, BookOpen, Mic, Check } from 'lucide-react'
 import { 
   getContentTypeColor, 
@@ -19,6 +20,7 @@ interface QuickContent {
 }
 
 const Hero = () => {
+  const navigate = useNavigate()
   const [selectedMood, setSelectedMood] = useState('')
   const [selectedContentTypes, setSelectedContentTypes] = useState<string[]>([])
   const [showContentTypeSelection, setShowContentTypeSelection] = useState(false)
@@ -505,18 +507,27 @@ const Hero = () => {
                   Create a free account to build your personal mood therapy library
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="btn-primary flex items-center space-x-2">
+                  <button 
+                    onClick={() => navigate('/login')}
+                    className="btn-primary flex items-center space-x-2"
+                  >
                     <Heart className="w-5 h-5" />
                     <span>Start Your Journey</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
-                  <button className="btn-secondary">
+                  <button 
+                    onClick={() => navigate('/discover')}
+                    className="btn-secondary"
+                  >
                     Continue Exploring
                   </button>
                 </div>
               </div>
               
-              <button className="btn-primary text-lg px-8 py-4">
+              <button 
+                onClick={() => navigate('/discover')}
+                className="btn-primary text-lg px-8 py-4"
+              >
                 Discover More Mood-Boosting Content
               </button>
             </div>
