@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { render, screen, fireEvent, waitFor } from '../utils/test-utils';
 import Hero from '../../components/Hero';
 

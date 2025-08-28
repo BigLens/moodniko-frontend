@@ -1,5 +1,11 @@
 import '@testing-library/jest-dom';
 
+// Polyfill TextEncoder/TextDecoder (not available in jsdom)
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+global.TextEncoder = require('util').TextEncoder;
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+global.TextDecoder = require('util').TextDecoder;
+
 // Mock IntersectionObserver (not available in jsdom)
 global.IntersectionObserver = class IntersectionObserver {
   constructor() {}
