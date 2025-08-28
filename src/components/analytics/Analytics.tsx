@@ -16,7 +16,7 @@ import {
   LineChart,
   Download
 } from 'lucide-react'
-import { Mood, RecommendationMetrics, SavedContent } from '../../types'
+import type { Mood, RecommendationMetrics, SavedContent } from '../../types'
 
 interface AnalyticsProps {
   moodHistory: Mood[]

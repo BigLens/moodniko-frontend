@@ -12,7 +12,7 @@ import {
   EyeOff,
   AlertTriangle
 } from 'lucide-react'
-import { UserPreferences } from '../../types'
+import type { UserPreferences } from '../../types'
 
 interface SettingsProps {
   userPreferences: UserPreferences

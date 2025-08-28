@@ -10,7 +10,7 @@ global.IntersectionObserver = class IntersectionObserver {
   rootMargin: string = '';
   thresholds: ReadonlyArray<number> = [];
   takeRecords(): IntersectionObserverEntry[] { return []; }
-} as IntersectionObserver;
+} as unknown as typeof IntersectionObserver;
 
 // Mock ResizeObserver (not available in jsdom)
 global.ResizeObserver = class ResizeObserver {

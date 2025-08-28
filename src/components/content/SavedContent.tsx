@@ -15,13 +15,13 @@ import {
   Star,
   Tag
 } from 'lucide-react'
-import { SavedContent as SavedContentType, Content } from '../../types'
+import type { SavedContent as SavedContentType } from '../../types'
 
 interface SavedContentProps {
   savedContent: SavedContentType[]
   onRemoveContent: (contentId: string) => void
-  onPlayContent: (content: Content) => void
-  onShareContent: (content: Content) => void
+  onPlayContent: (content: SavedContentType) => void
+  onShareContent: (content: SavedContentType) => void
   onRateContent: (contentId: string, rating: number) => void
 }
 
@@ -353,7 +353,7 @@ const SavedContent = ({
                 {/* Action Buttons */}
                 <div className="flex items-center space-x-2">
                   <button
-                    onClick={() => onPlayContent(item.content)}
+                    onClick={() => onPlayContent(item)}
                     className="flex-1 flex items-center justify-center space-x-2 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors"
                   >
                     <Play className="w-4 h-4" />
@@ -361,7 +361,7 @@ const SavedContent = ({
                   </button>
                   
                   <button
-                    onClick={() => onShareContent(item.content)}
+                    onClick={() => onShareContent(item)}
                     className="p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-colors"
                   >
                     <Share2 className="w-4 h-4" />

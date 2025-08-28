@@ -1,4 +1,4 @@
-import { User } from '../types'
+import type { User } from '../types'
 import { Link } from 'react-router-dom'
 import { Heart, Bookmark, BarChart3, Settings, ArrowRight } from 'lucide-react'
 

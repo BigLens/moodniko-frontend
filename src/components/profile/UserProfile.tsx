@@ -14,7 +14,7 @@ import {
   Star,
   BarChart3
 } from 'lucide-react'
-import { User as UserType, MoodHistory } from '../../types'
+import type { User as UserType, MoodHistory } from '../../types'
 
 interface UserProfileProps {
   user: UserType

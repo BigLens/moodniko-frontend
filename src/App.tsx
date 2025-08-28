@@ -17,7 +17,7 @@ import ContactUs from './components/ContactUs'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import TermsOfService from './components/TermsOfService'
 import MentalHealthResources from './components/MentalHealthResources'
-import { User, UserPreferences, MoodHistory, SavedContent as SavedContentType, RecommendationMetrics } from './types'
+import type { User, UserPreferences, MoodHistory, SavedContent as SavedContentType, RecommendationMetrics } from './types'
 
 // Mock data for development
 const mockUser: User = {
@@ -217,7 +217,7 @@ const App = () => {
                   onLogin={handleLogin}
                   onRegister={handleRegister}
                   isLoading={isLoading}
-                  error={error}
+                  error={error || undefined}
                 />
               )
             } />
@@ -230,7 +230,7 @@ const App = () => {
                   onLogin={handleLogin}
                   onRegister={handleRegister}
                   isLoading={isLoading}
-                  error={error}
+                  error={error || undefined}
                 />
               )
             } />
